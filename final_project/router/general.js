@@ -40,7 +40,7 @@ public_users.post("/register", (req,res) => {
 });
 
 // Get the book list available in the shop
-public_users.get('/',function (req, res) {
+public_users.get('/',async function (req, res) {
   //Write your code here
   return res.send(JSON.stringify(books,null,4));
 });
@@ -54,7 +54,7 @@ public_users.get('/isbn/:isbn',function (req, res) {
  });
   
 // Get book details based on author
-public_users.get('/author/:author',function (req, res) {
+public_users.get('/author/:author', async function (req, res) {
   //Write your code here
   const author=req.params.author;
   let keys=Object.keys(books);
@@ -69,7 +69,7 @@ public_users.get('/author/:author',function (req, res) {
 });
 
 // Get all books based on title
-public_users.get('/title/:title',function (req, res) {
+public_users.get('/title/:title',async function (req, res) {
   //Write your code here
   const title=req.params.title;
   let keys=Object.keys(books);
